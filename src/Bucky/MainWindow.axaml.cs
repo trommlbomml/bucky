@@ -1,12 +1,9 @@
 using Avalonia.Controls;
 
-namespace Bucky
+namespace Bucky;
+
+public partial class MainWindow : Window
 {
-    public partial class MainWindow : Window
-    {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
-    }
+    public MainWindow() 
+        => InitializeComponent();
 }
