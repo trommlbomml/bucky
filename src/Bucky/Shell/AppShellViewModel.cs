@@ -1,5 +1,6 @@
 using System.Collections.ObjectModel;
 using Bucky.Instrumentation.Core;
+using Bucky.Instrumentation.Extensibility;
 
 namespace Bucky.Shell
 {

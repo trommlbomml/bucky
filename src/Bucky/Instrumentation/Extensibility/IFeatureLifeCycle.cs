@@ -1,4 +1,4 @@
-namespace Bucky.Shell
+namespace Bucky.Instrumentation.Extensibility
 {
     public interface IFeatureLifeCycle
     {

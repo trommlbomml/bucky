@@ -1,6 +1,6 @@
 using System.ComponentModel;
 
-namespace Bucky.Shell
+namespace Bucky.Instrumentation.Extensibility
 {
     public interface IShellPane : INotifyPropertyChanged
     {

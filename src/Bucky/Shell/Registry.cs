@@ -1,3 +1,4 @@
+using Bucky.Instrumentation.Extensibility;
 using Lamar;
 
 namespace Bucky.Shell

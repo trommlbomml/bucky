@@ -1,4 +1,5 @@
 using Bucky.Instrumentation.Core;
+using Bucky.Instrumentation.Extensibility;
 using Bucky.Shell;
 
 namespace Bucky.Features.Buckets

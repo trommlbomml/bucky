@@ -1,7 +1,7 @@
 using System.ComponentModel;
 using System.Windows.Input;
 
-namespace Bucky.Shell
+namespace Bucky.Instrumentation.Extensibility
 {
     public interface IShellCommand : INotifyPropertyChanged
     {
