@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using Bucky.Features.Buckets;
 using Bucky.Shell;
 using Lamar;
 
@@ -30,6 +31,7 @@ namespace Bucky
             {
                 r.IncludeRegistry<Shell.Registry>();
                 r.IncludeRegistry(new Instrumentation.Registry(desktop));
+                r.IncludeRegistry<Features.Buckets.Registry>();
             });
     }
 }
