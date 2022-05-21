@@ -10,7 +10,7 @@ namespace Bucky.Shell
         string Caption { get; }
     }
     
-    public interface IShellCommandRegistrator
+    public interface IShellCommandHost
     {
         void RegisterCommand(IShellCommand shellCommand);
     }

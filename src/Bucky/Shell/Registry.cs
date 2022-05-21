@@ -10,7 +10,8 @@ namespace Bucky.Shell
 
             Use<AppShellViewModel>().Singleton()
                 .For<AppShellViewModel>()
-                .For<IShellCommandRegistrator>();
+                .For<IShellCommandHost>()
+                .For<IShellPaneHost>();
         }
     }
 }
