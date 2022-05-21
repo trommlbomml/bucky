@@ -8,7 +8,10 @@ namespace Bucky.Shell
         public Registry()
         {
             For<IAppStart>().Use<AppStart>().Singleton();
-            For<AppShellViewModel>().Use<AppShellViewModel>().Singleton();
+
+            Use<AppShellViewModel>().Singleton()
+                .For<AppShellViewModel>()
+                .For<IShellCommandRegistrator>();
         }
     }
 }
