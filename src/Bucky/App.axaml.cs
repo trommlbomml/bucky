@@ -1,6 +1,9 @@
+using System;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using Bucky.Shell;
+using Lamar;
 
 namespace Bucky
 {
@@ -13,10 +16,24 @@ namespace Bucky
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                desktop.MainWindow = new MainWindow();
+                var container = CreateContainer(desktop);
+                desktop.Exit += (sender, args) =>
+                {
+                    container.Dispose();
+                };
+                
+                container.GetInstance<IAppStart>()
+                    .StartApplication();
             }
 
             base.OnFrameworkInitializationCompleted();
         }
+
+        private IContainer CreateContainer(IClassicDesktopStyleApplicationLifetime desktop) =>
+            new Container(r =>
+            {
+                r.IncludeRegistry<Shell.Registry>();
+                r.IncludeRegistry(new Instrumentation.Registry(desktop));
+            });
     }
 }
