@@ -1,4 +1,3 @@
-using System;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
@@ -17,10 +16,7 @@ namespace Bucky
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
                 var container = CreateContainer(desktop);
-                desktop.Exit += (sender, args) =>
-                {
-                    container.Dispose();
-                };
+                desktop.Exit += (_, __) => container.Dispose();
                 
                 container.GetInstance<IAppStart>()
                     .StartApplication();
@@ -29,7 +25,7 @@ namespace Bucky
             base.OnFrameworkInitializationCompleted();
         }
 
-        private IContainer CreateContainer(IClassicDesktopStyleApplicationLifetime desktop) =>
+        private static IContainer CreateContainer(IClassicDesktopStyleApplicationLifetime desktop) =>
             new Container(r =>
             {
                 r.IncludeRegistry<Shell.Registry>();

@@ -1,4 +1,3 @@
-using Avalonia.Controls.ApplicationLifetimes;
 using Lamar;
 
 namespace Bucky.Shell

@@ -9,12 +9,12 @@ public class ViewModel : INotifyPropertyChanged
     public event PropertyChangedEventHandler? PropertyChanged;
 
     protected void SetValue<T>(ref T backingField, T value, Action<T>? onChanged = null,
-        [CallerMemberName] string? propertyname = null)
+        [CallerMemberName] string? propertyName = null)
     {
         if (Equals(backingField, value)) return;
         var old = backingField;
         backingField = value;
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyname));
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         onChanged?.Invoke(old);
     }
 }
